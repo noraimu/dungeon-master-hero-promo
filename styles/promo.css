@@ -88,24 +88,22 @@ body, html {
 /* Layer 4: 左側（女神）の光エフェクト */
 .effect-light {
   position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background: radial-gradient(ellipse 70% 120% at 0% 20%, rgba(255, 240, 180, 0.45) 0%, rgba(255, 200, 100, 0.15) 50%, transparent 80%);
-  mix-blend-mode: screen;
-  animation: pulseLight 5s ease-in-out infinite;
+  background: radial-gradient(ellipse 60% 100% at 0% 0%, rgba(255, 230, 150, 0.4) 0%, rgba(255, 200, 100, 0.1) 60%, transparent 100%);
+  animation: pulseLight 4s ease-in-out infinite alternate;
 }
 @keyframes pulseLight {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
 }
 /* Layer 5: 右側（コア・モンスター）の闇エフェクト */
 .effect-dark {
   position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background: radial-gradient(ellipse 70% 120% at 100% 80%, rgba(20, 0, 35, 0.95) 0%, rgba(80, 0, 120, 0.4) 50%, transparent 80%);
-  mix-blend-mode: multiply;
-  animation: pulseDark 6s ease-in-out infinite;
+  background: radial-gradient(ellipse 60% 100% at 100% 100%, rgba(100, 0, 120, 0.6) 0%, rgba(40, 0, 60, 0.3) 50%, transparent 100%);
+  animation: pulseDark 5s ease-in-out infinite alternate;
 }
 @keyframes pulseDark {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 1; }
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
 }
 .prologue-box {
   position: relative;
