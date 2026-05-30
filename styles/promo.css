@@ -65,6 +65,8 @@ body, html {
   padding: 40px;
   width: 90%;
   max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
   box-shadow: 0 20px 50px rgba(0,0,0,0.8);
   animation: fadeIn 0.8s ease forwards;
 }
@@ -271,4 +273,7 @@ body, html {
   .game-title { font-size: 2rem; top: 20px; left: 20px; }
   .image-caption h2 { font-size: 2rem; }
   .image-caption { bottom: 20px; left: 20px; }
+  .prologue-box { padding: 20px; }
+  .msg { margin-bottom: 15px; }
+  .bubble { padding: 12px; font-size: 0.95rem; }
 }
