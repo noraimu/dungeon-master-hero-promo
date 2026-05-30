@@ -10,9 +10,15 @@
 
   <!-- Prologue Hook (Overlay) -->
   <div id="prologue-overlay">
+    <!-- 背景：ダンジョン画像＋グロー（z-index 0, pointer-events none） -->
+    <div class="bg-glow" aria-hidden="true"></div>
+    <!-- 合成レイヤー（奥→手前）z-index順 -->
+    <img class="prologue-deco deco-goddess"    src="assets/promo/女神.webp"         alt=""><!-- z1: 女神（左上） -->
+    <img class="prologue-deco deco-army-hum"   src="assets/promo/人間軍団.webp"     alt=""><!-- z2: 人間軍団（左下） -->
+    <img class="prologue-deco deco-army-mon"   src="assets/promo/モンスター軍団.webp" alt=""><!-- z3: モンスター軍団（右上） -->
+    <img class="prologue-deco deco-core-fairy" src="assets/promo/コアと妖精.webp"    alt=""><!-- z4: コア＆妖精（右下・浮遊） -->
+
     <div class="prologue-box">
-      <h2 style="text-align: center; color: var(--accent-cyan); margin-bottom: 20px;">Prologue</h2>
-      
       <div class="msg">
         <div class="avatar avatar-god">女神</div>
         <div class="bubble">おお、勇者よ。死んでしまうとは情けない。<br>偶然たまたま隕石が当たって死んだあなたを、この女神アストレイリアが特別に転生させてあげましょう！</div>
@@ -155,7 +161,7 @@
 
       <!-- Persistent CTA -->
       <div class="cta-container">
-        <a href="#" class="cta-btn" onclick="event.preventDefault();">デモ版（絶賛開発中！）</a>
+        <a href="index.html" class="cta-btn">デモ版（防衛テスト）をプレイ</a>
         <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-muted);">鋭意製作中！皆様の声でダンジョンが進化します。</p>
         <p style="margin-top: 5px; font-size: 0.8rem; color: rgba(255,255,255,0.2);">&copy; 2026 Dungeon Master Hero Project.</p>
       </div>
