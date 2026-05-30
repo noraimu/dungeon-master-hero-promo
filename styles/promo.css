@@ -267,9 +267,11 @@ body, html {
 
 /* Responsive Mobile */
 @media (max-width: 900px) {
-  #app-container { flex-direction: column; overflow: auto; height: auto; min-height: 100vh; }
+  body, html { overflow: auto; height: auto; }
+  #app-container { flex-direction: column; overflow: visible; height: auto; min-height: 100vh; }
   .image-area { height: 50vh; flex: none; }
   .content-area { width: 100%; flex: 1; box-shadow: none; }
+  .tab-content-container { overflow-y: visible; padding: 20px; }
   .game-title { font-size: 2rem; top: 20px; left: 20px; }
   .image-caption h2 { font-size: 2rem; }
   .image-caption { bottom: 20px; left: 20px; }
