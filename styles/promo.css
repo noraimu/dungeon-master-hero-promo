@@ -88,7 +88,7 @@ body, html {
 /* Layer 4: 左側（女神）の光エフェクト */
 .effect-light {
   position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background: radial-gradient(ellipse 60% 100% at 0% 0%, rgba(255, 230, 150, 0.4) 0%, rgba(255, 200, 100, 0.1) 60%, transparent 100%);
+  background: radial-gradient(circle at 0% 0%, rgba(255, 245, 210, 0.95) 0%, rgba(255, 220, 120, 0.6) 30%, rgba(255, 200, 50, 0.2) 60%, transparent 100%);
   animation: pulseLight 4s ease-in-out infinite alternate;
 }
 @keyframes pulseLight {
