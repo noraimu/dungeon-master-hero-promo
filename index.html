@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ダンマス勇者 - ダンジョンマスターになって魔王を倒せ！</title>
+  <link rel="stylesheet" href="styles/promo.css">
+</head>
+<body>
+
+  <!-- Prologue Hook (Overlay) -->
+  <div id="prologue-overlay">
+    <div class="prologue-box">
+      <h2 style="text-align: center; color: var(--accent-cyan); margin-bottom: 20px;">Prologue</h2>
+      
+      <div class="msg">
+        <div class="avatar avatar-god">女神</div>
+        <div class="bubble">おお、勇者よ。死んでしまうとは情けない。<br>偶然たまたま隕石が当たって死んだあなたを、この女神アストレイリアが特別に転生させてあげましょう！</div>
+      </div>
+
+      <div class="msg">
+        <div class="avatar avatar-god">女神</div>
+        <div class="bubble">対価は一つ。向こうの世界でやんちゃしている『魔王』を倒してほしいんです！<br>見事倒せたら、元の世界に帰すサービスもつけちゃいますよ！</div>
+      </div>
+      
+      <div class="msg hero-msg" style="flex-direction: row-reverse;">
+        <div class="avatar avatar-hero">主人公</div>
+        <div class="bubble">元の世界に戻れる！？<br>よっしゃ、女神謹製のチート能力で無双してやるぜ！</div>
+      </div>
+      
+      <div class="msg hero-msg" style="flex-direction: row-reverse;">
+        <div class="avatar avatar-hero">主人公</div>
+        <div class="bubble">…………ってあれ？<br>動けない……というか、手足がない！？</div>
+      </div>
+
+      <div class="msg hero-msg" style="flex-direction: row-reverse;">
+        <div class="avatar avatar-hero">主人公</div>
+        <div class="bubble" style="border-color: var(--accent-magenta); color: #fff;">ま、まさか『ダンジョンコア』になってる！？<br>これでどうやって魔王倒すんだよ、女神さまぁ！！</div>
+      </div>
+
+      <div style="text-align: center;">
+        <button class="reincarnate-btn" onclick="startApp()">転生する</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Interactive App Layout -->
+  <div id="app-container">
+    
+    <!-- Left: Dynamic Image Area -->
+    <div class="image-area">
+      <div class="game-title">ダンマス勇者</div>
+      
+      <!-- Background Image Layers (Placeholders) -->
+      <div id="img-defense" class="image-layer img-defense active"></div>
+      <div id="img-offense" class="image-layer img-offense"></div>
+      <div id="img-creation" class="image-layer img-creation"></div>
+      
+      <div class="image-overlay"></div>
+      
+      <!-- Dynamic Captions -->
+      <div class="image-caption" id="caption-defense">
+        <h2>迫りくる侵入者を<br>撃退しろ！</h2>
+        <p>Defense Mode</p>
+      </div>
+      <div class="image-caption" id="caption-offense" style="display: none; opacity: 0;">
+        <h2 style="color: var(--accent-magenta);">各勢力の拠点を<br>陥とせ！！</h2>
+        <p style="color: var(--accent-orange);">Offense Mode</p>
+      </div>
+      <div class="image-caption" id="caption-creation" style="display: none; opacity: 0;">
+        <h2 style="color: var(--accent-purple);">無限の可能性を<br>創造しろ！</h2>
+        <p style="color: #fff;">Creation Mode</p>
+      </div>
+    </div>
+
+    <!-- Right: High Density Content Area -->
+    <div class="content-area">
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('defense')">防衛</button>
+        <button class="tab-btn" onclick="switchTab('offense')">侵攻</button>
+        <button class="tab-btn" onclick="switchTab('creation')">創造</button>
+      </div>
+
+      <!-- Tab Contents -->
+      <div class="tab-content-container">
+        
+        <!-- Defense Pane -->
+        <div id="pane-defense" class="tab-pane active">
+          <h3 class="pane-title text-gradient-cyan">守るだけじゃない。<br>知略の防衛戦</h3>
+          <p class="pane-desc">四方八方からコアの命を狙うのは、魔物、ならず者、王国軍、そして邪教徒たち。トラップとモンスターを駆使して迎え撃て！</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon">🧠</div>
+              <div class="feature-text">
+                <h4 class="text-gradient-cyan">賢すぎる侵入者AI</h4>
+                <p>敵は独自の「優先度」で動く。回復するヒーラー、罠を迂回する隠密…彼らの思考を読み、裏をかいてハメ殺す快感。</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">⛓️</div>
+              <div class="feature-text">
+                <h4 class="text-gradient-cyan">多彩なトラップ</h4>
+                <p>ダメージ床、状態異常、足止めギミック。侵入者の動きをコントロールし、確実な死へ導く「死の迷宮」を設計せよ。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offense Pane -->
+        <div id="pane-offense" class="tab-pane">
+          <h3 class="pane-title text-gradient">引きこもりやめて、<br>奪いに行こうぜ</h3>
+          <p class="pane-desc">待っているだけでは魔王は倒せない。配下の魔物を率いて、自ら外の世界へ打って出る逆転のゲームサイクル。</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon">⚔️</div>
+              <div class="feature-text">
+                <h4 class="text-gradient">敵拠点の攻略</h4>
+                <p>防衛を生き延びたら、次は攻めのターン。王国や邪教徒の拠点を攻め落とし、敵の息の根を止めろ。</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">💰</div>
+              <div class="feature-text">
+                <h4 class="text-gradient">技術と資源の強奪</h4>
+                <p>敵の拠点を落とすことで、新たな罠、魔法、区画拡張などの「アップグレード」を略奪。奪った力でダンジョンを凶悪化させろ。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Creation Pane -->
+        <div id="pane-creation" class="tab-pane">
+          <h3 class="pane-title" style="color: var(--accent-purple);">無限の組み合わせ。<br>君だけの魔王軍</h3>
+          <p class="pane-desc">ランダムな特性、スキルの習得、合成、進化……。奪ったマナを使って、思うがままの最強布陣を作り上げろ。</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon">🧬</div>
+              <div class="feature-text">
+                <h4 style="color: var(--accent-purple);">モンスター特性スロット</h4>
+                <p>最大5つの特性（パッシブ）をカスタマイズ。同じ種族でも、超絶壁役ゴブリンや高火力スライムなど役割が劇的に変化。</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🏰</div>
+              <div class="feature-text">
+                <h4 style="color: var(--accent-purple);">ダンジョン拡張と魔法</h4>
+                <p>1x3の小部屋から最大5x5へ。さらにマスター自身が戦局に介入する「戦術魔法」を解放し、盤面を支配しろ。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Persistent CTA -->
+      <div class="cta-container">
+        <a href="#" class="cta-btn" onclick="event.preventDefault();">デモ版（絶賛開発中！）</a>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: var(--text-muted);">鋭意製作中！皆様の声でダンジョンが進化します。</p>
+        <p style="margin-top: 5px; font-size: 0.8rem; color: rgba(255,255,255,0.2);">&copy; 2026 Dungeon Master Hero Project.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // プロローグ終了・メイン画面表示
+    function startApp() {
+      document.getElementById('prologue-overlay').style.opacity = '0';
+      setTimeout(() => {
+        document.getElementById('prologue-overlay').style.visibility = 'hidden';
+        document.getElementById('app-container').style.opacity = '1';
+      }, 500);
+    }
+
+    // タブ切り替えロジック
+    function switchTab(mode) {
+      // 1. タブボタンのアクティブ状態更新
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      // 2. 右側コンテンツ（Pane）の切り替え
+      document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+      document.getElementById('pane-' + mode).classList.add('active');
+
+      // 3. 左側画像レイヤーの切り替え
+      document.querySelectorAll('.image-layer').forEach(layer => layer.classList.remove('active'));
+      document.getElementById('img-' + mode).classList.add('active');
+
+      // 4. 左側キャプションの切り替え（フェード）
+      document.querySelectorAll('.image-caption').forEach(cap => {
+        cap.style.opacity = '0';
+        setTimeout(() => cap.style.display = 'none', 300);
+      });
+      const targetCap = document.getElementById('caption-' + mode);
+      setTimeout(() => {
+        targetCap.style.display = 'block';
+        // reflow
+        void targetCap.offsetWidth;
+        targetCap.style.opacity = '1';
+      }, 300);
+    }
+  </script>
+
+</body>
+</html>
